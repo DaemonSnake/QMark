@@ -5,7 +5,7 @@
 ## Login   <penava_b@epitech.net>
 ## 
 ## Started on  Thu Apr 23 18:34:37 2015 bastien penavayre
-## Last update Fri Apr 24 23:11:38 2015 bastien penavayre
+## Last update Mon Apr 27 11:45:07 2015 bastien penavayre
 ##
 
 CC		= g++
@@ -15,7 +15,8 @@ RM		= rm -f
 NAME		= test
 
 SRC		= main.cpp	\
-		QMark.cpp
+		QMark.cpp	\
+		ListQMark.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 

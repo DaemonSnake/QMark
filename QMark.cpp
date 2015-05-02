@@ -5,7 +5,7 @@
 // Login   <penava_b@epitech.net>
 // 
 // Started on  Fri Apr 24 21:56:55 2015 bastien penavayre
-// Last update Sat Apr 25 00:13:06 2015 bastien penavayre
+// Last update Sun Apr 26 08:57:07 2015 bastien penavayre
 //
 
 #include "QMark.hpp"
@@ -22,13 +22,14 @@ QMark const    	       		&QMark::operator=(QMark const &val) {
   return (*this);
 }
 
-std::ostream				&QMark::operator>>(std::ostream &flux) const
+void					QMark::sendTo(std::ostream &flux) const
 {
-  return *data >> flux;
+  data->sendTo(flux);
 }
 
 std::ostream				&operator<<(std::ostream &flux,
 						    QMark const &obj)
 {
-  return obj >> flux;
+  obj.sendTo(flux);
+  return (flux);
 }
