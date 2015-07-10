@@ -5,20 +5,20 @@
 // Login   <penava_b@epitech.net>
 // 
 // Started on  Fri Apr 24 14:31:15 2015 bastien penavayre
-// Last update Tue Jul  7 20:47:42 2015 bastien penavayre
+// Last update Sat Jul 11 01:38:51 2015 bastien penavayre
 //
 
 #pragma					once
 
-# include				<ostream>
-# include				<typeinfo>
-# include				<ostream>
-# include				<stdexcept>
-# include				<string>
+#include				<ostream>
+#include				<typeinfo>
+#include				<ostream>
+#include				<stdexcept>
+#include				<string>
 
 class					QMark
 {
-# include				<QMarkTools.hpp>
+#include				<QMarkTools.hpp>
 
   Iholder				*data;
 
@@ -29,7 +29,7 @@ public:
   }
 
   template				<typename T>
-  bool					isType() {
+  bool					isType() const {
     return (data->getType() == typeid(T));
   }
 
@@ -41,6 +41,13 @@ public:
   template				<typename T>
   T					&as() {
     return (static_cast<T>(*this));
+  }
+
+  template				<class T>
+  bool					operator==(T val) const {
+    if (isType<T>() && static_cast<T &>(*static_cast<Holder<T> *>(data)) == val)
+      return true;
+    return false;
   }
 
   QMark(QMark const &);
