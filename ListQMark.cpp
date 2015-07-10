@@ -1,14 +1,14 @@
 //
-// ListQMark.cpp for  in /home/penava_b/perso/ListOf?
+// ListQMark.cpp for  in /home/penava_b/perso/QMark
 // 
 // Made by bastien penavayre
 // Login   <penava_b@epitech.net>
 // 
-// Started on  Mon Apr 27 11:39:38 2015 bastien penavayre
-// Last update Mon Apr 27 11:45:19 2015 bastien penavayre
+// Started on  Fri Jul  3 04:05:06 2015 bastien penavayre
+// Last update Fri Jul  3 04:05:56 2015 bastien penavayre
 //
 
-#include "ListQMark.hpp"
+#include		<ListQMark.hpp>
 
 ListQMark::ListQMark() {
 }

@@ -5,14 +5,13 @@
 // Login   <penava_b@epitech.net>
 // 
 // Started on  Mon Apr 27 11:27:29 2015 bastien penavayre
-// Last update Thu Apr 30 11:35:18 2015 bastien penavayre
+// Last update Sat Jul 11 00:53:00 2015 bastien penavayre
 //
 
-#ifndef LISTQMARK_HPP_
-# define LISTQMARK_HPP_
+#pragma			once
 
-# include <list>
-# include "QMark.hpp"
+# include		<list>
+# include		"QMark.hpp"
 
 class			ListQMark :
   public		std::list<QMark>
@@ -22,7 +21,7 @@ public:
   virtual		~ListQMark();
 
   template		<typename T>
-  void			operator ()(T obj) {
+  void			operator ()(T const &obj) {
     push_back(obj);
   }
 
@@ -47,5 +46,3 @@ public:
     return (tmp);
   }
 };
-
-#endif /* LISTQMARK_HPP_ */

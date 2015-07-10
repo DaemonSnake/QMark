@@ -5,27 +5,26 @@
 ## Login   <penava_b@epitech.net>
 ## 
 ## Started on  Thu Apr 23 18:34:37 2015 bastien penavayre
-## Last update Mon Apr 27 11:45:07 2015 bastien penavayre
+## Last update Fri Jul  3 04:16:12 2015 bastien penavayre
 ##
 
 CC		= g++
 
 RM		= rm -f
 
-NAME		= test
+NAME		= libQMark.so
 
-SRC		= main.cpp	\
-		QMark.cpp	\
+SRC		= QMark.cpp	\
 		ListQMark.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 
-CXXFLAGS	= -W -Wall -Werror
+CXXFLAGS	= -W -Wall -Werror -fPIC -I ./inc
 
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-		$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
+		$(CC) $(OBJ) -o $(NAME) -shared
 clean:
 		$(RM) $(OBJ)
 

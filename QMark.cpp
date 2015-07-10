@@ -1,20 +1,25 @@
 //
-// QMark.cpp for  in /home/penava_b/perso/ListOf?
+// QMark.cpp for  in /home/penava_b/perso/QMark
 // 
 // Made by bastien penavayre
 // Login   <penava_b@epitech.net>
 // 
-// Started on  Fri Apr 24 21:56:55 2015 bastien penavayre
-// Last update Sun Apr 26 08:57:07 2015 bastien penavayre
+// Started on  Fri Jul  3 03:56:43 2015 bastien penavayre
+// Last update Fri Jul  3 04:03:47 2015 bastien penavayre
 //
 
-#include "QMark.hpp"
+#include		<QMark.hpp>
+
+QMark::QMark(QMark const &other) :
+  data(other.data->clone())
+{
+}
 
 QMark::~QMark() {
   delete(data);
 }
 
-QMark const    	       		&QMark::operator=(QMark const &val) {
+QMark const    		&QMark::operator=(QMark const &val) {
   if (this == &val || data == val.data)
     return (*this);
   delete(data);
@@ -22,13 +27,15 @@ QMark const    	       		&QMark::operator=(QMark const &val) {
   return (*this);
 }
 
-void					QMark::sendTo(std::ostream &flux) const
-{
+QMark::Iholder::~Iholder() {
+}
+
+void			QMark::sendTo(std::ostream &flux) const {
   data->sendTo(flux);
 }
 
-std::ostream				&operator<<(std::ostream &flux,
-						    QMark const &obj)
+std::ostream	       	&operator<<(std::ostream &flux,
+				    QMark const &obj)
 {
   obj.sendTo(flux);
   return (flux);
