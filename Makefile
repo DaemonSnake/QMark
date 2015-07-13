@@ -5,26 +5,36 @@
 ## Login   <penava_b@epitech.net>
 ## 
 ## Started on  Tue Jul 14 01:21:59 2015 bastien penavayre
-## Last update Tue Jul 14 01:43:07 2015 bastien penavayre
+## Last update Tue Jul 14 01:58:56 2015 bastien penavayre
 ##
 
+CC		= g++
+
+RM		= rm -f
+
 SHARED		= libQMark.so
+
 STATIC		= libQMark.a
 
-all:		$(SHARED) clean $(STATIC)
+SRC		= src/QMark.cpp	\
+		src/ListQMark.cpp
 
-$(SHARED):
-		$(MAKE) -f Make/shared.makefile
+OBJ		= $(SRC:.cpp=.o)
 
-$(STATIC):
-		$(MAKE) -f Make/static.makefile
+CXXFLAGS	= -W -Wall -Werror -fPIC -I ./inc
+
+all:		$(SHARED) $(STATIC)
+
+$(SHARED):	$(OBJ)
+		$(CC) $(OBJ) -o $(SHARED) -shared
+
+$(STATIC):	$(OBJ)
+		ar rvs $(STATIC) $(OBJ)
 
 clean:
-		$(MAKE) -f Make/shared.makefile clean
-		$(MAKE) -f Make/static.makefile clean
+		$(RM) $(OBJ)
 
-fclean:
-		$(MAKE) -f Make/shared.makefile fclean
-		$(MAKE) -f Make/static.makefile fclean
+fclean:		clean
+		$(RM) $(SHARED)
 
 re:		fclean all
