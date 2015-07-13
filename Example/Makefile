@@ -5,7 +5,7 @@
 ## Login   <penava_b@epitech.net>
 ## 
 ## Started on  Fri Jul  3 04:14:14 2015 bastien penavayre
-## Last update Thu Jul  9 20:50:43 2015 bastien penavayre
+## Last update Tue Jul 14 01:45:27 2015 bastien penavayre
 ##
 
 CXX		= g++
@@ -25,7 +25,7 @@ LINKFLAGS	= $(CXXFLAGS) -Wl,-rpath=../ -lQMark -L../
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-		$(MAKE) all -C ../
+		$(MAKE) libQMark.so -C ../
 		$(CXX) $(OBJ) -o $(NAME) $(LINKFLAGS)
 clean:
 		$(RM) $(OBJ)

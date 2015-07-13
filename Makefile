@@ -1,34 +1,30 @@
 ##
-## Makefile for  in /home/penava_b/perso/ListOf?
+## Makefile for  in /home/penava_b/perso/libGc
 ## 
 ## Made by bastien penavayre
 ## Login   <penava_b@epitech.net>
 ## 
-## Started on  Thu Apr 23 18:34:37 2015 bastien penavayre
-## Last update Fri Jul  3 04:16:12 2015 bastien penavayre
+## Started on  Tue Jul 14 01:21:59 2015 bastien penavayre
+## Last update Tue Jul 14 01:43:07 2015 bastien penavayre
 ##
 
-CC		= g++
+SHARED		= libQMark.so
+STATIC		= libQMark.a
 
-RM		= rm -f
+all:		$(SHARED) clean $(STATIC)
 
-NAME		= libQMark.so
+$(SHARED):
+		$(MAKE) -f Make/shared.makefile
 
-SRC		= QMark.cpp	\
-		ListQMark.cpp
+$(STATIC):
+		$(MAKE) -f Make/static.makefile
 
-OBJ		= $(SRC:.cpp=.o)
-
-CXXFLAGS	= -W -Wall -Werror -fPIC -I ./inc
-
-all:		$(NAME)
-
-$(NAME):	$(OBJ)
-		$(CC) $(OBJ) -o $(NAME) -shared
 clean:
-		$(RM) $(OBJ)
+		$(MAKE) -f Make/shared.makefile clean
+		$(MAKE) -f Make/static.makefile clean
 
-fclean:		clean
-		$(RM) $(NAME)
+fclean:
+		$(MAKE) -f Make/shared.makefile fclean
+		$(MAKE) -f Make/static.makefile fclean
 
 re:		fclean all
