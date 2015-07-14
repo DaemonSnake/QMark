@@ -5,7 +5,7 @@
 // Login   <penava_b@epitech.net>
 // 
 // Started on  Mon Apr 27 11:27:29 2015 bastien penavayre
-// Last update Sat Jul 11 00:53:00 2015 bastien penavayre
+// Last update Tue Jul 14 04:47:00 2015 bastien penavayre
 //
 
 #pragma			once
@@ -13,10 +13,9 @@
 # include		<list>
 # include		"QMark.hpp"
 
-class			ListQMark :
+struct			ListQMark :
   public		std::list<QMark>
 {
-public:
   ListQMark();
   virtual		~ListQMark();
 
@@ -30,7 +29,7 @@ public:
     int			i = -1;
 
     for (std::list<QMark>::iterator it = begin();
-	 it != end(); it++)
+    	 it != end(); it++)
       if ((*it).isType<T>() && index == ++i)
 	return (static_cast<T>(*it));
     throw std::invalid_argument("No such type");
@@ -39,10 +38,11 @@ public:
   template		<typename T>
   std::list<T>		sub() {
     std::list<T>	tmp;
+
     for (std::list<QMark>::iterator it = begin();
 	 it != end(); it++)
       if ((*it).isType<T>())
 	tmp.push_back(*it);
-    return (tmp);
+    return tmp;
   }
 };

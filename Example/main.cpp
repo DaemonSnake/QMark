@@ -5,7 +5,7 @@
 // Login   <penava_b@epitech.net>
 // 
 // Started on  Thu Apr 23 16:07:21 2015 bastien penavayre
-// Last update Sat Jul 11 01:39:06 2015 bastien penavayre
+// Last update Tue Jul 14 04:51:04 2015 bastien penavayre
 //
 
 #include <iostream>
@@ -34,8 +34,9 @@ int	main()
   lol.as<double &>()++;
   ((double &)(lol))++;
   std::cout << lol << std::endl;
-  std::list<int>		in = l.sub<int>();
-  for (std::list<int>::iterator it = in.begin();
+  const std::list<int>		&in = l.sub<int>();
+
+  for (std::list<int>::const_iterator it = in.begin();
        it != in.end(); it++) {
     std::cout << *it << std::endl;
   }
