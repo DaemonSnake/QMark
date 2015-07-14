@@ -5,7 +5,7 @@
 ## Login   <penava_b@epitech.net>
 ## 
 ## Started on  Tue Jul 14 01:21:59 2015 bastien penavayre
-## Last update Tue Jul 14 01:58:56 2015 bastien penavayre
+## Last update Tue Jul 14 02:00:15 2015 bastien penavayre
 ##
 
 CC		= g++
@@ -35,6 +35,6 @@ clean:
 		$(RM) $(OBJ)
 
 fclean:		clean
-		$(RM) $(SHARED)
+		$(RM) $(SHARED) $(STATIC)
 
 re:		fclean all
