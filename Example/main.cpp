@@ -5,7 +5,7 @@
 // Login   <penava_b@epitech.net>
 // 
 // Started on  Thu Apr 23 16:07:21 2015 bastien penavayre
-// Last update Tue Jul 14 04:51:04 2015 bastien penavayre
+// Last update Fri Jul 17 03:03:33 2015 bastien penavayre
 //
 
 #include <iostream>
@@ -18,9 +18,9 @@ int	main()
   ListQMark			l;
   QMark				lol(5);
 
-  l(2.45);
-  l("Hello");
-  l(100);
+  l.push_back(2.45);
+  l.push_back("Hello");
+  l.push_back(100);
   l.get<int &>()++;
   try {
     std::cout << l.get<int>() << std::endl;

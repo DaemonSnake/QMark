@@ -5,7 +5,7 @@
 // Login   <penava_b@epitech.net>
 // 
 // Started on  Mon Apr 27 11:27:29 2015 bastien penavayre
-// Last update Tue Jul 14 04:47:00 2015 bastien penavayre
+// Last update Fri Jul 17 03:02:30 2015 bastien penavayre
 //
 
 #pragma			once
@@ -18,11 +18,6 @@ struct			ListQMark :
 {
   ListQMark();
   virtual		~ListQMark();
-
-  template		<typename T>
-  void			operator ()(T const &obj) {
-    push_back(obj);
-  }
 
   template		<typename T>
   T			get(int index = 0) {

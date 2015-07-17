@@ -5,16 +5,15 @@
 // Login   <penava_b@epitech.net>
 // 
 // Started on  Tue Jul  7 20:37:45 2015 bastien penavayre
-// Last update Tue Jul  7 20:47:34 2015 bastien penavayre
+// Last update Tue Jul 14 06:50:55 2015 bastien penavayre
 //
 
 #pragma				once
 
 // INTERFACE
 
-class		       		Iholder
+struct		       		Iholder
 {
-public:
   virtual	       		~Iholder();
   virtual std::type_info const	&getType() const = 0;
   virtual Iholder      		*clone() const = 0;

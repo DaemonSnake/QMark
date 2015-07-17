@@ -5,7 +5,7 @@
 ## Login   <penava_b@epitech.net>
 ## 
 ## Started on  Tue Jul 14 01:21:59 2015 bastien penavayre
-## Last update Tue Jul 14 03:29:22 2015 bastien penavayre
+## Last update Tue Jul 14 07:09:48 2015 bastien penavayre
 ##
 
 CC		= g++
@@ -21,7 +21,7 @@ SRC		= src/QMark.cpp	\
 
 OBJ		= $(SRC:.cpp=.o)
 
-CXXFLAGS	= -W -Wall -Werror -fPIC -I ./inc
+CXXFLAGS	= -W -Wall -Wextra -Werror -fPIC -I ./inc
 
 all:		$(SHARED) $(STATIC)
 
